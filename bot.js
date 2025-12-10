@@ -4,9 +4,9 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
-// Замените на ваш токен бота
-const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-const WEB_APP_URL = 'https://your-domain.com'; // Замените на ваш домен
+// Получаем токен и URL из переменных окружения
+const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_BOT_TOKEN_HERE';
+const WEB_APP_URL = process.env.WEB_APP_URL || 'https://your-domain.com';
 
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 const app = express();
