@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео Приложение</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Видео Приложение</h1>
+            <div class="city-filter">
+                <input type="text" id="cityFilter" placeholder="Фильтр по городу..." />
+                <button onclick="filterVideos()">Поиск</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="videoPlayer" class="video-player hidden">
+                <div class="player-header">
+                    <button onclick="closePlayer()" class="close-btn">✕</button>
+                    <h3 id="videoTitle"></h3>
+                </div>
+                <video id="mainVideo" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+
+            <div id="videoGrid" class="video-grid">
+                <!-- Видео будут загружены динамически -->
+            </div>
+
+            <div id="loading" class="loading">
+                Загрузка видео...
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
