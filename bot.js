@@ -8,6 +8,11 @@ const fs = require('fs');
 const BOT_TOKEN = process.env.BOT_TOKEN || 'YOUR_BOT_TOKEN_HERE';
 const WEB_APP_URL = process.env.WEB_APP_URL || 'https://your-domain.com';
 
+// Отладочная информация
+console.log('BOT_TOKEN length:', BOT_TOKEN ? BOT_TOKEN.length : 'undefined');
+console.log('BOT_TOKEN starts with:', BOT_TOKEN ? BOT_TOKEN.substring(0, 10) + '...' : 'undefined');
+console.log('WEB_APP_URL:', WEB_APP_URL);
+
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 const app = express();
 const PORT = process.env.PORT || 3000;
